@@ -12,6 +12,10 @@
         flex-direction: row;
         --unite: min(0.98 * 1vh, 842 / 595 * 1vw);
     }
+
+    #cookies {
+        width: calc(95vw - var(--unite) * 100 * 595 / 842);
+    }
     #fiche-2 {
         height:calc(var(--unite) * 100);
         width: calc(var(--unite) * 100 * 595 / 842); 
@@ -66,8 +70,48 @@
 </body>
 
 <script>
-    document.cookie = "test=dude"
-    let output = document.getElementById('cookies')
+    let output = document.querySelector("#cookies");
     output.textContent = '> ' + document.cookie
+
+    let divNiveau = document.querySelector("#niveau");
+    let divPvActuel = document.querySelector("#pv-actuel");
+    let divPvMax = document.querySelector("#pv-max");
+
+    let cookies = document.cookie.split(';');
+    let newCookies = {};
+    cookies.forEach(cookie => {
+        cookie = cookie.split("=");
+        newCookies[cookie[0]] = cookie[1];
+    })
+    
+    console.log(newCookies);
+
+    if (newCookies.hasOwnProperty(" Niveau")) {
+        divNiveau.value = newCookies[" Niveau"];
+    }
+
+    if (newCookies.hasOwnProperty(" PvActuel")) {
+        divPvActuel.value = newCookies[" PvActuel"];
+    }
+
+    if (newCookies.hasOwnProperty(" PvMax")) {
+        divPvMax.value = newCookies[" PvMax"];
+    }
+
+    divNiveau.onchange = function() {
+        document.cookie = `Niveau=${divNiveau.value}; SameSite=None; Secure`;
+        output.textContent = '> ' + document.cookie
+    };
+
+    divPvActuel.onchange = function() {
+        document.cookie = `PvActuel=${divPvActuel.value}; SameSite=None; Secure`;
+        output.textContent = '> ' + document.cookie
+    };
+
+    divPvMax.onchange = function() {
+        document.cookie = `PvMax=${divPvMax.value}; SameSite=None; Secure`;
+        output.textContent = '> ' + document.cookie
+    };
+
 </script>
 </html>
