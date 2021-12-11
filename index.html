@@ -6,7 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        display: flex;
+        flex-direction: row;
+        --unite: min(0.98 * 1vh, 842 / 595 * 1vw);
+    }
+    #fiche-2 {
+        height:calc(var(--unite) * 100);
+        width: calc(var(--unite) * 100 * 595 / 842); 
+        background-image: url("./fiche-2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #fiche-2 img {
+        height:100%;
+    }
+
+    input {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    border: none;
+    }
+
+    input[type="number"]
+    {
+        font-size:calc(var(--unite) * 2.75);
+        width:calc(var(--unite) * 5.2);
+        -moz-appearance:textfield;
+    }
+
+    #niveau {
+        position: absolute;
+        top: calc(var(--unite) * 3);
+        left: calc(var(--unite) * 16);
+    }
+
+    #pv-actuel {
+        position: absolute;
+        top: calc(var(--unite) * 6);
+        left: calc(var(--unite) * 24);
+    }
+
+    #pv-max {
+        position: absolute;
+        top: calc(var(--unite) * 6);
+        left: calc(var(--unite) * 32);
+    }
+</style>
 <body>
+    <div id="fiche-2">
+        <input type="number" id="niveau" value="4">
+        <input type="number" id="pv-actuel" value="8">
+        <input type="number" id="pv-max" value="8">
+    </div>
     <div id="cookies">
         test
     </div>   
