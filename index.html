@@ -28,9 +28,10 @@
     }
 
     input {
-    background-color: rgba(0,0,0,0);
-    color: black;
-    border: none;
+        position: absolute;
+        background-color: rgba(0,0,0,0);
+        color: black;
+        border: none;
     }
 
     input[type="number"]
@@ -41,21 +42,77 @@
     }
 
     #niveau {
-        position: absolute;
         top: calc(var(--unite) * 3);
         left: calc(var(--unite) * 16);
     }
 
     #pv-actuel {
-        position: absolute;
         top: calc(var(--unite) * 6);
         left: calc(var(--unite) * 24);
     }
 
     #pv-max {
-        position: absolute;
         top: calc(var(--unite) * 6);
         left: calc(var(--unite) * 32);
+    }
+
+    .force {
+        top: calc(var(--unite) * 23.1);
+    }
+
+    .agilite {
+        top: calc(var(--unite) * 25.7);
+    }
+
+    .instinct {
+        top: calc(var(--unite) * 28.3);
+    }
+
+    .terrain-1 {
+        left: calc(var(--unite) * 16);
+    }
+
+    .terrain-2 {
+        left: calc(var(--unite) * 18.8);
+    }
+
+    .terrain-3 {
+        left: calc(var(--unite) * 21.7);
+    }
+
+    .terrain-4 {
+        left: calc(var(--unite) * 24);
+    }
+
+    .terrain-5 {
+        left: calc(var(--unite) * 26.6);
+    }
+
+    input[type='radio'] {
+        -webkit-appearance:none;
+        width:calc(var(--unite) * 3);
+        height:calc(var(--unite) * 3);
+        border:0px solid rgb(29, 173, 24);
+        border-radius:50%;
+        outline:none;
+        vertical-align: middle; margin: 0px;
+    }
+    input[type='radio']:hover {
+        box-shadow:0 0 3px 0px rgb(17, 0, 255) inset;
+    }
+    /*input[type='radio']:before {
+        content:'';
+        display:block;
+        width:100%;
+        height:100%;
+        border-radius:0%;    
+    }*/
+    /*input[type='radio']:checked:before {
+        background:rgba(0,0,0,0);
+    }*/
+
+    input[type='radio']:checked {
+        border:3px solid rgb(29, 173, 24);
     }
 </style>
 <body>
@@ -63,6 +120,24 @@
         <input type="number" id="niveau" value="4">
         <input type="number" id="pv-actuel" value="8">
         <input type="number" id="pv-max" value="8">
+
+        <input type="radio" id="force-1" name="force" class="force terrain-1">
+        <input type="radio" id="force-2" name="force" class="force terrain-2">
+        <input type="radio" id="force-3" name="force" class="force terrain-3">
+        <input type="radio" id="force-4" name="force" class="force terrain-4">
+        <input type="radio" id="force-5" name="force" class="force terrain-5">
+
+        <input type="radio" id="agilite-1" name="agilite" class="agilite terrain-1">
+        <input type="radio" id="agilite-2" name="agilite" class="agilite terrain-2">
+        <input type="radio" id="agilite-3" name="agilite" class="agilite terrain-3">
+        <input type="radio" id="agilite-4" name="agilite" class="agilite terrain-4">
+        <input type="radio" id="agilite-5" name="agilite" class="agilite terrain-5">
+        
+        <input type="radio" id="instinct-1" name="instinct" class="instinct terrain-1">
+        <input type="radio" id="instinct-2" name="instinct" class="instinct terrain-2">
+        <input type="radio" id="instinct-3" name="instinct" class="instinct terrain-3">
+        <input type="radio" id="instinct-4" name="instinct" class="instinct terrain-4">
+        <input type="radio" id="instinct-5" name="instinct" class="instinct terrain-5">
     </div>
     <div id="cookies">
         test
