@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Beta de fiche Donjons et Groudon</title>
 </head>
 <style>
     body {
         display: flex;
         flex-direction: row;
         --unite: min(0.98 * 1vh, 842 / 595 * 1vw);
+        margin: 0px;
     }
 
     #cookies {
         width: calc(95vw - var(--unite) * 100 * 595 / 842);
     }
+
+    @media (max-width: 700px) { 
+        #cookies {
+            display: none;
+        }
+    }
+
+    
     #fiche-2 {
         height:calc(var(--unite) * 100);
         width: calc(var(--unite) * 100 * 595 / 842); 
@@ -42,50 +51,50 @@
     }
 
     #niveau {
-        top: calc(var(--unite) * 3);
-        left: calc(var(--unite) * 16);
+        top: calc(var(--unite) * 2);
+        left: calc(var(--unite) * 15);
     }
 
     #pv-actuel {
-        top: calc(var(--unite) * 6);
-        left: calc(var(--unite) * 24);
+        top: calc(var(--unite) * 5);
+        left: calc(var(--unite) * 23);
     }
 
     #pv-max {
-        top: calc(var(--unite) * 6);
-        left: calc(var(--unite) * 32);
+        top: calc(var(--unite) * 5);
+        left: calc(var(--unite) * 31);
     }
 
     .force {
-        top: calc(var(--unite) * 23.1);
+        top: calc(var(--unite) * 22.1);
     }
 
     .agilite {
-        top: calc(var(--unite) * 25.7);
+        top: calc(var(--unite) * 24.7);
     }
 
     .instinct {
-        top: calc(var(--unite) * 28.3);
+        top: calc(var(--unite) * 27.3);
     }
 
     .terrain-1 {
-        left: calc(var(--unite) * 16);
+        left: calc(var(--unite) * 15);
     }
 
     .terrain-2 {
-        left: calc(var(--unite) * 18.8);
+        left: calc(var(--unite) * 17.8);
     }
 
     .terrain-3 {
-        left: calc(var(--unite) * 21.7);
+        left: calc(var(--unite) * 20.7);
     }
 
     .terrain-4 {
-        left: calc(var(--unite) * 24);
+        left: calc(var(--unite) * 23);
     }
 
     .terrain-5 {
-        left: calc(var(--unite) * 26.6);
+        left: calc(var(--unite) * 25.6);
     }
 
     input[type='radio'] {
@@ -112,7 +121,7 @@
     }*/
 
     input[type='radio']:checked {
-        border:3px solid rgb(29, 173, 24);
+        border:min(3px, calc(0.5 *  var(--unite))) solid rgb(29, 173, 24);
     }
 </style>
 <body>
@@ -123,19 +132,19 @@
 
         <input type="radio" id="force-1" name="force" class="force terrain-1">
         <input type="radio" id="force-2" name="force" class="force terrain-2">
-        <input type="radio" id="force-3" name="force" class="force terrain-3">
+        <input type="radio" id="force-3" name="force" class="force terrain-3 checked">
         <input type="radio" id="force-4" name="force" class="force terrain-4">
         <input type="radio" id="force-5" name="force" class="force terrain-5">
 
         <input type="radio" id="agilite-1" name="agilite" class="agilite terrain-1">
         <input type="radio" id="agilite-2" name="agilite" class="agilite terrain-2">
-        <input type="radio" id="agilite-3" name="agilite" class="agilite terrain-3">
+        <input type="radio" id="agilite-3" name="agilite" class="agilite terrain-3 checked">
         <input type="radio" id="agilite-4" name="agilite" class="agilite terrain-4">
         <input type="radio" id="agilite-5" name="agilite" class="agilite terrain-5">
         
         <input type="radio" id="instinct-1" name="instinct" class="instinct terrain-1">
         <input type="radio" id="instinct-2" name="instinct" class="instinct terrain-2">
-        <input type="radio" id="instinct-3" name="instinct" class="instinct terrain-3">
+        <input type="radio" id="instinct-3" name="instinct" class="instinct terrain-3 checked">
         <input type="radio" id="instinct-4" name="instinct" class="instinct terrain-4">
         <input type="radio" id="instinct-5" name="instinct" class="instinct terrain-5">
     </div>
